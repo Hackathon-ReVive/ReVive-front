@@ -15,6 +15,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Header from "./components/Header";
+import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 
 /**
@@ -31,9 +32,10 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<div>Hola mundo</div>} />
+          <Route path="/" element={<Navigate to="/" />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+        <Banner />
         <Footer />
       </Router>
     </>
