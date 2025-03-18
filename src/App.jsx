@@ -14,18 +14,21 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import Header from "./components/Header";
 
 /**
  * App component that manages the routing for the application.
  *
  * @function App
+ * @modified `RV-26` Update App.jsx to include Header component
  * @returns {JSX.element} The rendered application component with routing.
- * @author {Ángel Aragón}
+ * @author {Ángel Aragón} {Kat Leverton}
  */
 function App() {
   return (
     <>
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<div>Hola mundo</div>} />
           <Route path="*" element={<Navigate to="/" />} />
