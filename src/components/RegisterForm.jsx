@@ -14,7 +14,6 @@ function RegisterForm() {
 
   const onSubmit = async (data) => {
     try {
-      console.log(data);
       const response = await axios.post("AQUI VA LA API", data);
       console.log("Registro Exitoso:", response.data);
       navigate("/login");
@@ -39,7 +38,9 @@ function RegisterForm() {
           className="w-full p-2 border border-gray-300 rounded"
         />
         {errors.name && (
-          <p className="text-red-500 text-sm">{errors.name.message}</p>
+          <p className="text-red-500 text-sm border-1 border-red-500 rounded bg-red-100 p-2">
+            {errors.name.message}
+          </p>
         )}
 
         <input
@@ -49,7 +50,9 @@ function RegisterForm() {
           className="w-full p-2 border border-gray-300 rounded"
         />
         {errors.email && (
-          <p className="text-red-500 text-sm">{errors.email.message}</p>
+          <p className="text-red-500 text-sm border-1 border-red-500 rounded bg-red-100 p-2">
+            {errors.email.message}
+          </p>
         )}
 
         <input
@@ -61,7 +64,9 @@ function RegisterForm() {
           className="w-full p-2 border border-gray-300 rounded"
         />
         {errors.password && (
-          <p className="text-red-500 text-sm">{errors.password.message}</p>
+          <p className="text-red-500 text-sm border-1 border-red-500 rounded bg-red-100 p-2">
+            {errors.password.message}
+          </p>
         )}
 
         <input
@@ -75,7 +80,7 @@ function RegisterForm() {
           className="w-full p-2 border border-gray-300 rounded"
         />
         {errors.confirmPassword && (
-          <p className="text-red-500 text-sm">
+          <p className="text-red-500 text-sm border-1 border-red-500 rounded bg-red-100 p-2">
             {errors.confirmPassword.message}
           </p>
         )}
