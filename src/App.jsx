@@ -1,24 +1,38 @@
-import { useState } from 'react'
+/**
+ * Application Router Component.
+ *
+ * This component defines the main application routes using React Router.
+ * It ensures that all routing logic is handled within a valid <BrowserRouter> context.
+ *
+ * @module App
+ * @author {Ángel Aragón}
+ */
 
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
+/**
+ * App component that manages the routing for the application.
+ *
+ * @function App
+ * @returns {JSX.element} The rendered application component with routing.
+ * @author {Ángel Aragón}
+ */
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <h1>ReVive hackathon project</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Router>
+        <Routes>
+          <Route path="/" element={<div>Hola mundo</div>} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
