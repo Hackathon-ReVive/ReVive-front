@@ -5,7 +5,8 @@
  * It supports different styles and functionalities based on the provided props.
  *
  * @module Button
- * @author {Ángel Aragón}
+ * @modified `KEY-282` LKASJILKSAJDLKA
+ * @author {Ángel Aragón} {Kat Leverton}
  */
 
 import PropTypes from "prop-types";
