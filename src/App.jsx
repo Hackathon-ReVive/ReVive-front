@@ -3,7 +3,9 @@ import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
+import ImageText from "./components/ImageText";
 import Footer from "./components/Footer";
+
 function App() {
   return (
     <Router>
@@ -15,6 +17,7 @@ function App() {
       </Routes>
       <Header />
       <Banner />
+      <ImageText />
       <Footer />
     </Router>
   );
