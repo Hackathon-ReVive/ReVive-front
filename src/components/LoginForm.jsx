@@ -1,23 +1,7 @@
-/**
- * Login Form Component.
- *
- * This form allows users to log in by entering their credentials.
- * It includes a submit button and a button to navigate to the registration form.
- *
- * @module LoginForm
- * @author {Ángel Aragón}
- */
-
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
-/**
- * LoginForm component that allows users to enter their credentials and log in.
- *
- * @function LoginForm
- * @returns {JSX.Element} The rendered login form component.
- */
 function LoginForm() {
   const {
     register,
