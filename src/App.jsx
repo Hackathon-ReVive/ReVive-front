@@ -15,6 +15,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 /**
  * App component that manages the routing for the application.
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<div>Hola mundo</div>} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   );
