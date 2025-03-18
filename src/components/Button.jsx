@@ -1,10 +1,17 @@
 import PropTypes from "prop-types";
 
-function Button({ type = "button", text, className, onClick }) {
+function Button({
+  type = "button",
+  text,
+  className,
+  onClick,
+  bgColor = "bg-teal-500",
+  txtColor = "text-white",
+}) {
   return (
     <button
       type={type}
-      className={`w-full bg-teal-500 text-white p-2 rounded hover:bg-teal-600 transition ${className}`}
+      className={`${bgColor} ${txtColor} p-2 rounded hover:bg-teal-600 hover:text-white cursor-pointer transition ${className}`}
       onClick={onClick}
     >
       {text}
