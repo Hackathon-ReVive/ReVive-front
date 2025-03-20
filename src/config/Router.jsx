@@ -4,6 +4,7 @@ import Home from "../pages/Home.jsx";
 import Products from "../pages/Products.jsx";
 import Login from "../pages/Login.jsx";
 import Register from "../pages/Register.jsx";
+import NewProduct from "../components/NewProduct.jsx";
 
 export default function Router() {
   return (
@@ -14,6 +15,7 @@ export default function Router() {
         <Route path="/products" element={<Products />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/newproduct" element={<NewProduct />} />
       </Routes>
     </BrowserRouter>
   );
