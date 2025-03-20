@@ -25,7 +25,7 @@ function RegisterForm() {
       console.log("Registro Exitoso:", response);
       navigate("/login");
     } catch (error) {
-      if (error.status === 409) {
+      if (error.status === 401) {
         setEmailExist("El correo ya está registrado.");
       } else {
         console.error("Error en el Registro:", error);
