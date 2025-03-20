@@ -10,6 +10,16 @@ ReVive is a platform for buying and selling pre-owned items, promoting sustainab
 
 By extending the life cycle of products, our marketplace supports the circular economy, encouraging responsible consumption and minimising our environmental impact.
 
+### Required documntation
+
+[![Jira](https://img.shields.io/badge/-Jira-0052CC?logo=jira&logoColor=white&style=flat)](https://angelaragondeveloper.atlassian.net/jira/software/projects/RV/list?selectedIssue=RV-14)
+![Jira](https://github.com/user-attachments/assets/35da3343-26dc-4527-ab8b-bd8730a910fb)
+
+[![Confluence](https://img.shields.io/badge/-Confluence-172B4D?style=flat&logo=confluence&logoColor=white)](https://angelaragondeveloper.atlassian.net/jira/software/projects/RV/list)\
+![Confluence](https://github.com/user-attachments/assets/045ce54d-66e7-428b-b890-2825aa594c82)
+
+[![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white&style=flat)](https://www.figma.com/design/oNEsfyPxKCFi52GUKrldLP/ReVive?node-id=152-674&p=f&t=2UOfzpTMSZ2IZXeu-0)
+
 ## 🛠️ Technology and tools
 
 ## Front
