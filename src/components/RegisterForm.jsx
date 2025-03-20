@@ -36,19 +36,22 @@ function RegisterForm() {
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-cover bg-center bg-[url(/assets/bgLoginRegister.png)]">
-      <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-md mt-50 mb-50 border-1 border-stone-200">
-        <h2 className="text-2xl font-semibold text-center text-gray-700 mb-4">
+      <div className="max-w-md mx-auto p-8 bg-[#ECFDF5] shadow-md rounded-3xl border border-green-300 backdrop-blur-lg bg-opacity-80">
+        <h2 className="text-3xl font-bold text-center text-[#064E3B] mb-2">
           Registro de Usuario
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          <label htmlFor="name" className="block text-gray-700 text-sm">
+          <label
+            htmlFor="name"
+            className="block text-[#059669] text-sm font-medium"
+          >
             Nombre Completo
           </label>
           <input
             type="text"
             {...register("name", { required: "El nombre es obligatorio" })}
             placeholder="Nombre Completo"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border border-[#A7F3D0] rounded-lg"
             id="name"
           />
           {errors.name && (
@@ -56,7 +59,10 @@ function RegisterForm() {
               {errors.name.message}
             </p>
           )}
-          <label htmlFor="email" className="block text-gray-700 text-sm">
+          <label
+            htmlFor="email"
+            className="block text-[#059669] text-sm font-medium"
+          >
             Correo Electrónico
           </label>
           <input
@@ -69,7 +75,7 @@ function RegisterForm() {
               },
             })}
             placeholder="Correo Electrónico"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border border-[#A7F3D0] rounded-lg"
             id="email"
           />
           {errors.email && (
@@ -82,7 +88,10 @@ function RegisterForm() {
               {emailExist}
             </p>
           )}
-          <label htmlFor="address" className="block text-gray-700 text-sm">
+          <label
+            htmlFor="address"
+            className="block text-[#059669] text-sm font-medium"
+          >
             Dirección
           </label>
           <input
@@ -91,7 +100,7 @@ function RegisterForm() {
               required: "La dirección es obligatoria",
             })}
             placeholder="Dirección"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border border-[#A7F3D0] rounded-lg"
             id="address"
           />
           {errors.address && (
@@ -99,7 +108,10 @@ function RegisterForm() {
               {errors.address.message}
             </p>
           )}
-          <label htmlFor="cp" className="block text-gray-700 text-sm">
+          <label
+            htmlFor="cp"
+            className="block text-[#059669] text-sm font-medium"
+          >
             Código Postal
           </label>
           <input
@@ -112,7 +124,7 @@ function RegisterForm() {
               },
             })}
             placeholder="Código Postal"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border border-[#A7F3D0] rounded-lg"
             id="cp"
           />
           {errors.postalCode && (
@@ -120,7 +132,10 @@ function RegisterForm() {
               {errors.postalCode.message}
             </p>
           )}
-          <label htmlFor="password" className="block text-gray-700 text-sm">
+          <label
+            htmlFor="password"
+            className="block text-[#059669] text-sm font-medium"
+          >
             Contraseña
           </label>
           <input
@@ -129,7 +144,7 @@ function RegisterForm() {
               required: "La contraseña es obligatoria",
             })}
             placeholder="Contraseña"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border border-[#A7F3D0] rounded-lg"
             id="password"
           />
           {errors.password && (
@@ -139,7 +154,7 @@ function RegisterForm() {
           )}
           <label
             htmlFor="confirmPassword"
-            className="block text-gray-700 text-sm"
+            className="block text-[#059669] text-sm font-medium"
           >
             Confirmar Contraseña
           </label>
@@ -151,7 +166,7 @@ function RegisterForm() {
                 value === watch("password") || "Las contraseñas no coinciden",
             })}
             placeholder="Confirmar Contraseña"
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-3 border border-[#A7F3D0] rounded-lg"
             id="confirmPassword"
           />
           {errors.confirmPassword && (
@@ -159,7 +174,17 @@ function RegisterForm() {
               {errors.confirmPassword.message}
             </p>
           )}
-
+          <p className="text-xs text-[#059669] text-center mt-4">
+            Al Registrarte, aceptas nuestros{" "}
+            <a href="#" className="text-green-700 underline">
+              Terminos de servicio
+            </a>{" "}
+            y{" "}
+            <a href="#" className="text-green-700 underline">
+              Políticas de Privacidad
+            </a>
+            .
+          </p>
           <Button type="submit" text="Registrarse" className="w-full" />
         </form>
       </div>
