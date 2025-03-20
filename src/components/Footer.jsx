@@ -1,3 +1,4 @@
+import React from "react";
 function Footer() {
     return (
         <footer className="mt-2 text-emerald-900 bg-green-100 flex justify-between font-['Fira_Sans']">
