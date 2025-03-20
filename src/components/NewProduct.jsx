@@ -22,15 +22,15 @@ function NewProduct() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-cover bg-center bg-[url(/assets/bgLoginRegister.png)]">
-      <div className="max-w-md mx-auto p-8 bg-[#ECFDF5] shadow-md rounded-3xl border border-green-300 backdrop-blur-lg bg-opacity-80">
+    <section className="min-h-screen flex items-center justify-center bg-cover bg-center bg-[url(/assets/bgNewProduct.jpg)]">
+      <div className="max-w-md mx-auto mt-50 mb-50 p-8 bg-[#ECFDF5] shadow-md rounded-3xl border border-green-300 backdrop-blur-lg bg-opacity-80">
         <h2 className="text-3xl font-bold text-center text-[#064E3B] mb-2">
           Agregar Nuevo Producto
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <label
             htmlFor="name"
-            className="block text-[#059669] text-sm font-medium"
+            className="block text-[#059669] text-sm font-medium mt-10"
           >
             Nombre del Producto
           </label>
@@ -124,7 +124,14 @@ function NewProduct() {
           <input
             id="image"
             type="url"
-            {...register("image", { required: "La imagen es obligatoria" })}
+            {...register("image", {
+              required: "La imagen es obligatoria",
+              pattern: {
+                value: /\.(jpg|jpeg|png|gif|webp)$/i,
+                message:
+                  "Debe ser una URL de imagen válida (.jpg, .jpeg, .png, .gif, .webp)",
+              },
+            })}
             className="w-full p-3 border border-[#A7F3D0] rounded-lg"
             placeholder="Ej: https://misitio.com/imagen.jpg"
           />
@@ -134,7 +141,6 @@ function NewProduct() {
             </p>
           )}
 
-          {/* Botón de enviar */}
           <Button
             type="submit"
             text="Agregar Producto"
