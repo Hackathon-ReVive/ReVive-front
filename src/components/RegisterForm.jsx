@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import Button from "./Button";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { registerUser } from "../services/api";
 
 function RegisterForm() {
   const {
@@ -17,19 +17,18 @@ function RegisterForm() {
   const onSubmit = async (data) => {
     setEmailExist("");
     try {
-      const response = await axios.post("AQUI VA LA API", data);
-      console.log("Registro Exitoso:", response.data);
+      const formData = { ...data };
+      delete formData.confirmPassword;
+      setEmailExist("");
+
+      const response = await registerUser(formData);
+      console.log("Registro Exitoso:", response);
       navigate("/login");
     } catch (error) {
-      if (error.response && error.response.status === 401) {
-        setEmailExist(
-          "El correo electrónico ya está registrado. Por favor, usa otro."
-        );
+      if (error.status === 409) {
+        setEmailExist("El correo ya está registrado.");
       } else {
-        console.error(
-          "Error en el Registro:",
-          error.response?.data || error.message
-        );
+        console.error("Error en el Registro:", error);
       }
     }
   };

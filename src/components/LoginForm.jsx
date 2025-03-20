@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { loginUser } from "../services/api";
 import Button from "./Button";
 
 function LoginForm() {
@@ -13,14 +13,11 @@ function LoginForm() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:8080/api", data);
-      console.log("Login Exitoso:", response.data);
+      const userData = await loginUser(data);
+      console.log("Login Exitoso:", userData);
       navigate("/");
     } catch (error) {
-      console.error(
-        "Error en el Login:",
-        error.response?.data || error.message
-      );
+      console.error("Error en el Login:", error);
     }
   };
 
