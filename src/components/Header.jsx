@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import logo from "/assets/logo.svg";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +8,11 @@ function Header() {
   return (
     <header className="bg-white text-emerald-900 font-['Fira_Sans'] flex justify-between items-center p-3">
       <div className="bg-green-100 flex items-center space-x-2 rounded-2xl p-2 m-1">
-        <img src={logo} alt="Logo de ReVive" className="h-10 w-10" />
+        <img
+          src="/assets/logo.svg"
+          alt="Logo de ReVive"
+          className="h-10 w-10"
+        />
         <Link to="/home" className="font-bold">
           ReVive
         </Link>

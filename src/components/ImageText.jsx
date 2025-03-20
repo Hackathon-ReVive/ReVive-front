@@ -1,10 +1,8 @@
-import imageText from "/assets/text-image.png";
-
 function ImageText() {
   return (
     <section className="relative">
       <img
-        src={imageText}
+        src="/assets/text-image.png"
         className="z-0 w-full opacity-75"
         alt="foto estética de un salón con vista atractiva"
       ></img>
