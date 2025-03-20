@@ -1,5 +1,3 @@
-import banner from "./../assets/banner-image.png";
-
 function Banner() {
     return (
         <section className="bg-emerald-900 p-10 w-full flex flex-col md:flex-row">
@@ -13,7 +11,7 @@ function Banner() {
                     </p>
                 </button>
             </div>
-            <img src={banner} alt="foto-persona-trabajando-con-su-portatil">
+            <img src="/assets/banner-image.png" alt="foto-persona-trabajando-con-su-portatil">
             </img>
         </section>
     );
