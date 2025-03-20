@@ -6,7 +6,7 @@ function Banner() {
           Explora nuestros productos
         </h1>
         <button className="flex align-center">
-          <p>Empieza ahora.</p>
+          <p>Empieza ahora</p>
         </button>
       </div>
       <img
