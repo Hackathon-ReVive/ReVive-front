@@ -11,7 +11,7 @@ function Product({ id, name, image, price, type, description, sold }) {
     };
 
     return (
-        <section className="bg-white rounded-lg p-4 transition duration-300">
+        <article className="bg-white rounded-lg p-4 transition duration-300">
             <img src={image} alt={name} className="w-full h-40 object-cover rounded-lg aspect-[2/3]" />
             <h2 className="font-['Fira_Sans'] text-lg font-semibold mt-2 text-emerald-900">{name}</h2>
             <p className="font-['Fira_Sans'] text-black">{type}</p>
@@ -22,7 +22,7 @@ function Product({ id, name, image, price, type, description, sold }) {
                     ¡Vendido!
                     </div>
                 )}
-        </section>
+        </article>
     );
 }
 
