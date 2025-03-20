@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm Component matches snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="min-h-screen flex items-center justify-center bg-cover bg-center bg-[url(/assets/bgLoginRegister.png)]"
+  >
+    <div
+      class="max-w-md mx-auto p-8 bg-[#ECFDF5] shadow-md rounded-3xl border border-green-300 backdrop-blur-lg bg-opacity-80"
+    >
+      <h2
+        class="text-3xl font-bold text-center text-[#064E3B] mb-2"
+      >
+        Conéctate
+      </h2>
+      <p
+        class="text-center text-[#059669] mb-4"
+      >
+        ¡Dale vida nueva a tus productos!
+      </p>
+      <form
+        class="space-y-4"
+      >
+        <label
+          class="block text-[#059669] text-sm font-medium"
+          for="email"
+        >
+          Correo Electrónico
+        </label>
+        <input
+          class="w-full p-3 border border-[#A7F3D0] rounded-lg"
+          id="email"
+          name="email"
+          placeholder="Email Address"
+          type="email"
+        />
+        <label
+          class="block text-[#059669] text-sm font-medium"
+          for="password"
+        >
+          Contraseña
+        </label>
+        <input
+          class="w-full p-3 border border-[#A7F3D0] rounded-lg bg-[#ECFDF5]"
+          id="password"
+          name="password"
+          placeholder="Password"
+          type="password"
+        />
+        <button
+          class="bg-teal-500 text-white p-2 rounded hover:bg-teal-600 hover:text-white cursor-pointer transition w-full text-white rounded-lg transition"
+          type="submit"
+        >
+          Continuar con Email
+        </button>
+      </form>
+      <button
+        class="bg-[#DCFCE7] text-teal-600 p-2 rounded hover:bg-teal-600 hover:text-white cursor-pointer transition mt-4 border-[#A7F3D0] border w-full rounded-lg"
+        type="button"
+      >
+        No tengo cuenta
+      </button>
+    </div>
+  </section>
+</DocumentFragment>
+`;
