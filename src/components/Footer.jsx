@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer className="text-emerald-900 bg-green-100 flex justify-between font-['Fira_Sans']">
+        <footer className="mt-2 text-emerald-900 bg-green-100 flex justify-between font-['Fira_Sans']">
             <div className="flex align-items-start items-center p-2">
                 <p>ReVive. Derechos reservados.</p>     
             </div>
