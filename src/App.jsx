@@ -1,12 +1,10 @@
 import React from "react";
-import Home from "./pages/Home.jsx";
+import Router from "./config/Router";
 
-function App() { 
-    <> 
-    return (
-      <Home />
-    );
-    </>
+function App() {
+  return (
+    <Router />
+  );
 }
 
-export default App
+export default App;
