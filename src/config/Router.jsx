@@ -20,6 +20,7 @@ export default function Router() {
           <Header />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="*" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/login" element={<Login />} />

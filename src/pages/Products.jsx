@@ -14,11 +14,11 @@ function Products() {
             <>
                 <main className="container bg-[#DCFCE7] mx-auto p-4">
                     <h1 className="text-2xl font-bold text-center mb-6">Elige un artículo para darle una segunda vida</h1>
-                        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <section className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {products.map((product) => (
                         <Product key={product.id} {...product} />
                         ))}
-                        </div>
+                        </section>
                 </main>
           </>
       );
