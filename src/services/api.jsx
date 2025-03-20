@@ -4,7 +4,7 @@ const API_BASE_URL = "http://localhost:8080/api";
 
 export const loginUser = async (userData) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/login`, userData);
+    const response = await axios.post(`${API_BASE_URL}/users/login`, userData);
     return response.data;
   } catch (error) {
     throw error.response?.data || error.message;
@@ -13,7 +13,10 @@ export const loginUser = async (userData) => {
 
 export const registerUser = async (userData) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/register`, userData);
+    const response = await axios.post(
+      `${API_BASE_URL}/users/register`,
+      userData
+    );
     return response.data;
   } catch (error) {
     throw error.response?.data || error.message;

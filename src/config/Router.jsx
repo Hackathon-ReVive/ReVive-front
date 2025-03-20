@@ -8,7 +8,7 @@ import Home from "../pages/Home.jsx";
 import Products from "../pages/Products.jsx";
 import Login from "../pages/Login.jsx";
 import Register from "../pages/Register.jsx";
-import NewProduct from "../components/NewProduct.jsx";
+import AddProduct from "../pages/AddProduct.jsx";
 import Cart from "../pages/Cart.jsx";
 import AboutUs from "../pages/AboutUs.jsx";
 
@@ -26,6 +26,7 @@ export default function Router() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/add" element={<AddProduct />} />
             <Route path="/about-us" element={<AboutUs />} />
           </Routes>
           <Footer />
