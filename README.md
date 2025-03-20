@@ -1,6 +1,6 @@
 # 🛒 ReVive marketplace 
 
-Welcome to the ReVive project where we offer your products a second chance.
+Welcome to the **ReVive project** where we offer your products a second chance.
 
 ## 📌 Description
 
@@ -11,9 +11,8 @@ ReVive is a platform for buying and selling pre-owned items, promoting sustainab
 By extending the life cycle of products, our marketplace supports the circular economy, encouraging responsible consumption and minimising our environmental impact.
 
 ## 🛠️ Technology and tools
-## ADD VERSIONS HERE
 
-### Front: React + Vite
+### Front: React + Vite + styles using Tailwind
 ### Back: Java
 ### Database: MySQL
 
