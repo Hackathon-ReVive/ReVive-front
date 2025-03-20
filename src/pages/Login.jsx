@@ -2,7 +2,7 @@ import Header from "./../components/Header";
 import LoginForm from "./../components/LoginForm"
 import Footer from "./../components/Footer"
 
-function Products() {
+function Login() {
     return (
         <>
         <Header />
@@ -12,4 +12,4 @@ function Products() {
       );
     };
     
-    export default Products
+    export default Login
