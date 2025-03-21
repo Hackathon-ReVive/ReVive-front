@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Product from "../components/Product";
 import Button from "../components/Button";
+import Modal from "../components/Modal";
+import ProductDetail from "../components/ProductDetail";
 
 function Products() {
     const products = [
@@ -13,41 +15,59 @@ function Products() {
     ];
 
     const [searchTerm, setSearchTerm] = useState("");
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleProductClick = (product) => {
+        setSelectedProduct(product);
+        setIsModalOpen(true);
+    };
+
     const filteredProducts = products.filter(product =>
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       product.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
       product.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+    );
 
     return (
-            <>
-                <main className="container bg-[#DCFCE7] mx-auto p-4">
-                    <h1 className="text-2xl font-bold text-center mb-6">Elige un artículo para darle una segunda vida</h1>
-                        <div className="flex justify-center mb-4">
-                          <input
-                          type="text"
-                          placeholder="Buscar un producto"
-                          value={searchTerm}
-                          onChange={(e) => setSearchTerm(e.target.value)}
-                          className="w-full max-w-md p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
-                        </div>
-                        <h1 className="text-2xl font-bold text-center mb-6">O sube algo tuyo...</h1>
-                            <div className="flex justify-center mb-6">  
-                            <Button 
-                              text="Añade tu producto" 
-                              onClick={() => window.location.href = '/add'} 
-                              className="mx-auto block bg-blue-500 hover:bg-blue-700 mb-5"/>
-                            </div>
-                                <section className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                                  {filteredProducts.length > 0 ? (
-                                  filteredProducts.map((product) => <Product key={product.id} {...product} />)
-                                  ) : (
-                                  <p className="text-center col-span-full text-gray-600">No se han encontrado productos.</p>
-                                  )}
-                                </section>
-                </main>
-          </>
-      );
-    };
-    
-    export default Products
+        <>
+            <main className="container bg-[#DCFCE7] mx-auto p-4">
+                <h1 className="text-2xl font-bold text-center mb-6">Elige un artículo para darle una segunda vida</h1>
+                
+                <div className="flex justify-center mb-4">
+                    <input
+                        type="text"
+                        placeholder="Buscar un producto"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="w-full max-w-md p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
+                </div>
+                <h1 className="text-2xl font-bold text-center mb-6">O sube algo tuyo...</h1>
+                <div className="flex justify-center mb-6">  
+                    <Button 
+                        text="Añade tu producto" 
+                        onClick={() => window.location.href = '/add'} 
+                        className="mx-auto block bg-blue-500 hover:bg-blue-700 mb-5"/>
+                </div>
+                <section className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {filteredProducts.length > 0 ? (
+                        filteredProducts.map((product) => (
+                          <div key={product.id}>
+                              <Product 
+                              {...product} 
+                              onImageClick={() => handleProductClick(product)}/>
+                          </div>
+                          ))
+                          ) : (
+                          <p className="text-center col-span-full text-gray-600">No se han encontrado productos.</p>
+                    )}
+                </section>
+            </main>
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                {selectedProduct && <ProductDetail product={selectedProduct} />}
+            </Modal>
+        </>
+    );
+}
+
+export default Products;
