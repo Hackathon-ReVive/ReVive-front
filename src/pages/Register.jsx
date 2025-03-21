@@ -1,6 +1,6 @@
 import RegisterForm from "../components/RegisterForm";
 
-function Products() {
+function Register() {
   return (
     <>
       <RegisterForm />
@@ -8,4 +8,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Register;

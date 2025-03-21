@@ -38,7 +38,7 @@ function NewProduct() {
           <input
             id="name"
             type="text"
-            {...register("name", { required: "El nombre es obligatorio" })}
+            {...register("title", { required: "El nombre es obligatorio" })}
             className="w-full p-3 border border-[#A7F3D0] rounded-lg"
             placeholder="Ej: Camiseta, Zapatos, Libro..."
           />
@@ -80,13 +80,12 @@ function NewProduct() {
           <select
             id="category"
             {...register("category", { required: "Selecciona una categoría" })}
-            className="w-full p-3 border border-[#A7F3D0] rounded-lg"
           >
-            <option value="">Seleccione una categoría</option>
-            <option value="Libros">Libros</option>
-            <option value="Accesorios">Accesorios</option>
-            <option value="Calzado">Calzado</option>
-            <option value="Hogar">Hogar</option>
+            <option value="">Selecciona una categoría</option>
+            <option value="ELECTRONICS">Electrónica</option>
+            <option value="CLOTHING">Ropa</option>
+            <option value="HOME">Hogar</option>
+            <option value="BOOKS">Libros</option>
           </select>
           {errors.category && (
             <p className="text-red-500 text-sm border-1 border-red-500 rounded bg-red-100 p-2">
@@ -139,6 +138,14 @@ function NewProduct() {
               {errors.image.message}
             </p>
           )}
+
+          <input
+            type="hidden"
+            {...register("userId")}
+            value={localStorage.getItem("userId") || "1"}
+          />
+
+          <input type="hidden" {...register("status")} value="AVAILABLE" />
 
           <Button
             type="submit"

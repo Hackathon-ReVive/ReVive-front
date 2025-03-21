@@ -1,7 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { loginUser } from "../services/api";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
+import { loginUser } from "../services/apiServices";
 import Button from "./Button";
 
 function LoginForm() {
@@ -10,13 +12,13 @@ function LoginForm() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const { login } = useContext(UserContext);
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     try {
-      const userData = await loginUser(data);
-      console.log("Login Exitoso:", userData);
-      navigate("/");
+      await loginUser(data, login);
+      navigate("/"); // Redirigir a home tras el login
     } catch (error) {
       console.error("Error en el Login:", error);
     }
@@ -59,40 +61,29 @@ function LoginForm() {
             </p>
           )}
 
-          <label
-            htmlFor="password"
-            className="block text-[#059669] text-sm font-medium"
-          >
-            Contraseña
-          </label>
-          <input
-            type="password"
-            {...register("password", { required: "Contraseña es obligatoria" })}
-            placeholder="Password"
-            className="w-full p-3 border border-[#A7F3D0] rounded-lg bg-[#ECFDF5]"
-            id="password"
-          />
-          {errors.password && (
-            <p className="text-red-500 text-sm border-1 border-red-500 rounded bg-red-100 p-2">
-              {errors.password.message}
-            </p>
-          )}
-
-          <Button
-            type="submit"
-            text="Continuar con Email"
-            className="w-full text-white rounded-lg transition"
-          />
-        </form>
-        <Button
-          text="No tengo cuenta"
-          className="mt-4 border-[#A7F3D0] border w-full rounded-lg"
-          bgColor="bg-[#DCFCE7]"
-          txtColor="text-teal-600"
-          onClick={() => navigate("/register")}
+        <label
+          htmlFor="password"
+          className="block text-gray-700 text-sm font-medium"
+        >
+          Contraseña
+        </label>
+        <input
+          id="password"
+          type="password"
+          {...register("password", { required: "Contraseña es obligatoria" })}
+          className="w-full p-3 border border-gray-300 rounded-lg"
         />
-      </div>
-    </section>
+        {errors.password && (
+          <p className="text-red-500 text-sm">{errors.password.message}</p>
+        )}
+
+        <Button
+          type="submit"
+          text="Iniciar sesión"
+          className="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition"
+        />
+      </form>
+    </div>
   );
 }
 

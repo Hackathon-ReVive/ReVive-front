@@ -1,12 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../CartContext";
 import Button from "./Button";
-import Modal from "./Modal";
-import ProductDetail from "./ProductDetail";
 
-function Product({ id, name, image, price, type, description, sold }) {
+function Product({ id, title, image, price, type, description, sold }) {
   const { addToCart } = useContext(CartContext);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const euroPrice = new Intl.NumberFormat("es-ES", {
     style: "currency",
@@ -21,12 +18,11 @@ function Product({ id, name, image, price, type, description, sold }) {
     <article className="bg-white rounded-lg p-4 transition duration-300 relative">
       <img
         src={image}
-        alt={name}
+        alt={title}
         className="w-full h-40 object-cover rounded-lg aspect-[2/3] cursor-pointer"
-        onClick={() => setIsModalOpen(true)}
       />
       <h2 className="font-['Fira_Sans'] text-lg font-semibold mt-2 text-emerald-900">
-        {name}
+        {title}
       </h2>
       <p className="font-['Fira_Sans'] text-black">{type}</p>
       <p className="font-['Fira_Sans'] text-emerald-900 font-bold">
@@ -42,7 +38,7 @@ function Product({ id, name, image, price, type, description, sold }) {
         <Button
           text="Agregar al carrito"
           onClick={() =>
-            addToCart({ id, name, image, price, type, description })
+            addToCart({ id, title, image, price, type, description })
           }
           className="mt-2 bg-green-900 text-white w-full"
         />
@@ -50,10 +46,11 @@ function Product({ id, name, image, price, type, description, sold }) {
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <ProductDetail
-          product={{ id, name, image, price, type, description }}
+          product={{ id, title, image, price, type, description }}
           showAddToCart={false}
         />
       </Modal>
+
     </article>
   );
 }
