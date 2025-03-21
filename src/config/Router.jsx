@@ -28,7 +28,6 @@ export default function Router() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/add" element={<AddProduct />} />
             <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/myproducts/:id" element={<MyProducts />} />
           </Routes>
           <Footer />
         </CartProvider>

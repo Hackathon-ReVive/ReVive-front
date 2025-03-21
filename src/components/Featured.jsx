@@ -57,9 +57,9 @@ function Featured() {
 
   return (
     <section className="container bg-green-100 w-full mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4 text-center">
-        Productos destacados
-      </h1>
+      <h2 className="w-full text-center text-emerald-900 text-4xl font-extrabold font-[Playfair_Display] leading-[46.8px] mb-5">
+        Conéctate
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {products.map((product) => (
           <div
