@@ -37,8 +37,8 @@ function RegisterForm() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-cover bg-center bg-[url(/assets/bgLoginRegister.png)]">
       <div className="max-w-md mx-auto p-8 bg-[#ECFDF5] shadow-md rounded-3xl border border-green-300 backdrop-blur-lg bg-opacity-80">
-        <h2 className="text-3xl font-bold text-center text-[#064E3B] mb-2">
-          Registro de Usuario
+        <h2 class="w-full text-center text-emerald-900 text-4xl font-extrabold font-[Playfair_Display] leading-[46.8px]">
+          Registro de Usuaio
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <label

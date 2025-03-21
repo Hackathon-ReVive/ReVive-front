@@ -24,9 +24,10 @@ function NewProduct() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-cover bg-center bg-[url(/assets/bgNewProduct.jpg)]">
       <div className="max-w-md mx-auto mt-50 mb-50 p-8 bg-[#ECFDF5] shadow-md rounded-3xl border border-green-300 backdrop-blur-lg bg-opacity-80">
-        <h2 className="text-3xl font-bold text-center text-[#064E3B] mb-2">
+        <h2 class="w-full text-center text-emerald-900 text-4xl font-extrabold font-[Playfair_Display] leading-[46.8px]">
           Agregar Nuevo Producto
         </h2>
+
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <label
             htmlFor="name"
@@ -70,7 +71,6 @@ function NewProduct() {
             </p>
           )}
 
-          {/* Categoría */}
           <label
             htmlFor="category"
             className="block text-[#059669] text-sm font-medium"
@@ -94,7 +94,6 @@ function NewProduct() {
             </p>
           )}
 
-          {/* Descripción */}
           <label
             htmlFor="description"
             className="block text-[#059669] text-sm font-medium"
