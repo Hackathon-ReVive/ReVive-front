@@ -58,6 +58,33 @@ function LoginForm() {
             </p>
           )}
 
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <label
+            htmlFor="email"
+            className="block text-[#059669] text-sm font-medium"
+          >
+            Correo Electrónico
+          </label>
+          <input
+            type="email"
+            {...register("email", {
+              required: "Email es obligatorio",
+              pattern: {
+                value: /^[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}$/i,
+                message: "Formato de email inválido",
+              },
+            })}
+            placeholder="Email Address"
+            className="w-full p-3 border border-[#A7F3D0] rounded-lg"
+            id="email"
+          />
+          {errors.email && (
+            <p className="text-red-500 text-sm border-1 border-red-500 rounded bg-red-100 p-2">
+              {errors.email.message}
+            </p>
+          )}
+
           <label
             htmlFor="password"
             className="block text-[#059669] text-sm font-medium"

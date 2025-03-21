@@ -19,7 +19,7 @@ function Product({ id, title, image, price, type, description, sold }) {
       <img
         src={image}
         alt={title}
-        className="w-full h-40 object-cover rounded-lg aspect-[2/3]"
+        className="w-full h-40 object-cover rounded-lg aspect-[2/3] cursor-pointer"
       />
       <h2 className="font-['Fira_Sans'] text-lg font-semibold mt-2 text-emerald-900">
         {title}
@@ -40,9 +40,17 @@ function Product({ id, title, image, price, type, description, sold }) {
           onClick={() =>
             addToCart({ id, title, image, price, type, description })
           }
-          className="mt-2 bg-emerald-900 text-white w-full"
+          className="mt-2 bg-green-900 text-white w-full"
         />
       )}
+
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <ProductDetail
+          product={{ id, title, image, price, type, description }}
+          showAddToCart={false}
+        />
+      </Modal>
+
     </article>
   );
 }
