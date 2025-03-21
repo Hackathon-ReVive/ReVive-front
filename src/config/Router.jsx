@@ -13,25 +13,23 @@ import Cart from "../pages/Cart.jsx";
 
 export default function Router() {
   return (
-
     <BrowserRouter>
-
-        <UserProvider>
+      <UserProvider>
         <CartProvider>
           <Header />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="*" element={<Home />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/add" element={<AddProduct />} />
-              <Route path="/cart" element={<Cart />} />
-            </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/add" element={<AddProduct />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
           <Footer />
         </CartProvider>
-        </UserProvider>
+      </UserProvider>
     </BrowserRouter>
   );
 }

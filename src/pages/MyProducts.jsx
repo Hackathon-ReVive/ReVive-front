@@ -9,16 +9,15 @@ function UserProducts() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // Obtener productos del usuario
   useEffect(() => {
     if (!user) return;
 
     const fetchProducts = async () => {
       try {
-        const data = await getUserProducts(user.id); // Usando Axios desde apiServices.js
+        const data = await getUserProducts(user.id);
         setProducts(data);
       } catch (err) {
-        setError("Error al cargar productos");
+        setError(err);
       } finally {
         setLoading(false);
       }
@@ -27,12 +26,11 @@ function UserProducts() {
     fetchProducts();
   }, [user]);
 
-  // Eliminar producto
   const handleDelete = async (productId) => {
     if (!window.confirm("¿Estás seguro de eliminar este producto?")) return;
 
     try {
-      await deleteProduct(productId); // Usando Axios desde apiServices.js
+      await deleteProduct(productId);
       setProducts(products.filter((product) => product.id !== productId));
     } catch (error) {
       console.error("Error al eliminar el producto:", error);
