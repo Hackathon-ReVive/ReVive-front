@@ -12,7 +12,7 @@ export const UserProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("token"); // Remove the token from localStorage
+    localStorage.removeItem("token");
   };
 
   useEffect(() => {
