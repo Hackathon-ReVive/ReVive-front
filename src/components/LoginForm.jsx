@@ -1,4 +1,3 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../services/api";
@@ -25,7 +24,7 @@ function LoginForm() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-cover bg-center bg-[url(/assets/bgLoginRegister.png)]">
       <div className="max-w-md mx-auto p-8 bg-[#ECFDF5] shadow-md rounded-3xl border border-green-300 backdrop-blur-lg bg-opacity-80">
-        <h2 className="text-3xl font-bold text-center text-[#064E3B] mb-2">
+        <h2 className="w-full text-center text-emerald-900 text-4xl font-extrabold font-[Playfair_Display] leading-[46.8px]">
           Conéctate
         </h2>
         <p className="text-center text-[#059669] mb-4">
